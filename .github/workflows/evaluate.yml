@@ -61,12 +61,6 @@ jobs:
         with:
           inlineScript: |
             az account set --subscription ${{env.AZURE_SUBSCRIPTION_ID}}
-      
-      - name: Check account details
-        uses: azure/CLI@v2
-        with:
-          inlineScript: |
-            az ad signed-in-user show 
 
       - name: evaluate orchestrator
         working-directory: ./src/api
